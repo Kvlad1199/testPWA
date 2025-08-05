@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My PWA Demo</title>
+
+    <!-- iOS-specific meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="PWA Demo" />
+
+    <!-- Android + Desktop icons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <!-- Android-specific icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="img/android-chrome-512x512.png" />
+
+    <!-- iOS-specific icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="img/site.webmanifest" />
+  </head>
+  <body
+    style="
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+      background: #fafafa;
+    ">
+    <h1>Hello from PWA 👋</h1>
+    <button id="installBtn" style="padding: 10px 20px; font-size: 16px; margin-top: 20px">
+      Встановити PWA
+    </button>
+
+    <script>
+      let deferredPrompt;
+      const installBtn = document.getElementById('installBtn');
+      installBtn.style.display = 'none';
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.style.display = 'block';
+
+        installBtn.addEventListener('click', () => {
+          installBtn.style.display = 'none';
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            } else {
+              console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
