@@ -1,6 +1,6 @@
 {
-  "name": "My PWA Demo",
-  "short_name": "PWA Demo",
+  "name": "My PWA Demo2",
+  "short_name": "PWA Demo2",
   "start_url": "/",
   "icons": [
     {
@@ -38,3 +38,4 @@
   "background_color": "#ffffff",
   "display": "standalone"
 }
+
