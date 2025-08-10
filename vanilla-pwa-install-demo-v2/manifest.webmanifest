@@ -1,0 +1,26 @@
+{
+  "name": "Vanilla PWA Install Demo v2",
+  "short_name": "PWA Demo",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f1222",
+  "theme_color": "#6b4ce6",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

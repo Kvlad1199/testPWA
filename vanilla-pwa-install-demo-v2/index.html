@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PWA Install (Vanilla JS) — v2</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#6b4ce6">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <style>
+    :root { --bg:#0f1222; --card:#171a2e; --line:#2a2f55; --text:#fff; --muted:#cfd3ff; --brand:#6b4ce6; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: var(--bg); color: var(--text); }
+    header { padding: 24px; text-align: center; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    p { margin: 8px 0; color: var(--muted); }
+    main { display: grid; place-items: center; padding: 24px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; max-width: 720px; width: 100%; box-shadow: 0 10px 40px rgba(0,0,0,.35); }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    button { appearance: none; border: none; background: var(--brand); color: #fff; padding: 12px 18px; border-radius: 12px; font-weight: 700; cursor: pointer; }
+    button.outline { background: transparent; border: 1px solid #4650c7; }
+    .hint { background: #202549; border: 1px dashed #4650c7; border-radius: 12px; padding: 12px 14px; margin-top: 14px; color: var(--muted); }
+    .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #2b2f5a; color: var(--muted); font-size: 12px; margin-right: 6px; }
+    footer { text-align: center; padding: 24px; opacity: .7; font-size: 13px; }
+
+    /* Modal */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.6); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 999; }
+    .modal { width: 100%; max-width: 520px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+    .modal h2 { margin: 0 0 6px; font-size: 20px; }
+    .modal p { color: var(--muted); }
+    .modal .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 14px; }
+    .show { display: flex !important; }
+    .small { font-size: 13px; opacity: .8; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vanilla JS PWA Install — v2</h1>
+    <p>Одна і та ж сторінка і в браузері, і в установленій PWA. Кнопки «Встановити» завжди видимі.</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="row">
+        <!-- Можна мати скільки завгодно кнопок з класом pwa-install-trigger -->
+        <button class="pwa-install-trigger">Встановити PWA</button>
+        <button class="pwa-install-trigger outline">Встановити (2)</button>
+      </div>
+
+      <div id="status" class="hint" style="display:none"></div>
+
+      <div class="hint small">
+        <span class="badge">Порада</span>
+        Щоб перетворити будь-яку кнопку на «інсталлер» — просто додай їй клас <code>pwa-install-trigger</code>.
+      </div>
+    </div>
+  </main>
+
+  <footer>SW + Manifest + універсальний інсталлер через <code>pwa-install-trigger</code></footer>
+
+  <!-- iOS інструкція -->
+  <div id="iosModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="ios-title">
+    <div class="modal">
+      <h2 id="ios-title">Як встановити на iOS</h2>
+      <p>У Safari натисни <strong>Share</strong> (іконка з стрілкою вгору), потім <strong>Add to Home Screen</strong>. Це додасть ярлик PWA на головний екран.</p>
+      <p class="small">Якщо ти у Chrome/Firefox на iOS — відкрий цю сторінку в Safari і повтори кроки.</p>
+      <div class="actions">
+        <button id="iosClose" class="outline">Зрозуміло</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fallback інструкція для браузерів без beforeinstallprompt -->
+  <div id="fallbackModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="fb-title">
+    <div class="modal">
+      <h2 id="fb-title">Як додати на головний екран</h2>
+      <p>Схоже, браузер не підтримує автоматичний запит встановлення. Спробуй через меню браузера «Додати на головний екран» / «Install app».</p>
+      <div class="actions">
+        <button id="fbClose" class="outline">Ок</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
