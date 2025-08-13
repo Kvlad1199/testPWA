@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TitsTok</title>
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#6b4ce6" />
+    <link rel="apple-touch-icon" href="./img/icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <script defer src="/pwa-install.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="/service-worker.js"></script>
+    <script defer src="/pwa-install.js"></script>
+    <script src="https://static.production.push-sender.com/mng/subs_window.js?ver=1752530235"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://static.production.push-sender.com/mng/subs_window.css?ver=1752530235" />
+    <script src="https://static.production.push-sender.com/mng/channels/init.min.js?ver=1752530235"></script>
+    <script>
+      if (window.initSubscriber) {
+        const snippetId = 'PTM4NTAxPS89MjY3NQ==';
+        window.webPushSubscriber = window.initSubscriber(snippetId);
+        window.webPushSubscriber.ready();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="chat-container">
+      <div class="video-background">
+        <video autoplay muted loop playsinline id="bg-video">
+          <source src="img/video.mp4" type="video/mp4" />
+          Ваш браузер не підтримує тег відео.
+        </video>
+      </div>
+
+      <!-- ------------------ -->
+      <div class="chat-box chat-box1 active">
+        <div class="chat-box-header track-click" data-click-id="tik-tok-logo" onclick="openlinks()">
+          <img src="img/icons/logo.svg" alt="logo" style="pointer-events: none" />
+        </div>
+
+        <div
+          class="chat-box-right-side track-click"
+          data-click-id="tik-tok-right-side"
+          onclick="openlinks()">
+          <div class="avatar-wrap" style="pointer-events: none">
+            <img src="img/avatar.jpg" alt="" />
+            <div class="avatar-plus"></div>
+          </div>
+          <div class="right-side-like" style="pointer-events: none">
+            <img src="img/icons/like.svg" alt="" />
+          </div>
+          <div class="right-side-comment" style="pointer-events: none">
+            <img src="img/icons/comment-icon-wiht-num.svg" alt="" />
+          </div>
+        </div>
+        <div id="message-container" class="message-container message-bigger">
+          ARE YOU AT LEAST 18 <br />
+          YEARS OLD?
+        </div>
+
+        <div id="options-container" class="options-container">
+          <div onclick="showNextBlock(2)" class="option-button" style="cursor: pointer">NO</div>
+          <div onclick="showNextBlock(2)" class="option-button" style="cursor: pointer">YES</div>
+        </div>
+        <div class="chat-box__label">@nicol_97</div>
+        <div
+          class="chat-box-footer track-click"
+          data-click-id="tik-tok-footer"
+          onclick="openlinks()">
+          <img src="img/icons/main.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/trends.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/new_post.svg" alt="icon" style="pointer-events: none" />
+          <img
+            class="inbox-footer-icon"
+            src="img/icons/inbox.svg"
+            alt="icon"
+            style="pointer-events: none" />
+          <img src="img/icons/profile.svg" alt="icon" style="pointer-events: none" />
+        </div>
+      </div>
+      <!-- ------------------ -->
+      <div class="chat-box chat-box2">
+        <div class="chat-box-header track-click" data-click-id="tik-tok-logo" onclick="openlinks()">
+          <img src="img/icons/logo.svg" alt="logo" style="pointer-events: none" />
+        </div>
+
+        <div
+          class="chat-box-right-side track-click"
+          data-click-id="tik-tok-right-side"
+          onclick="openlinks()">
+          <div class="avatar-wrap" style="pointer-events: none">
+            <img src="img/avatar.jpg" alt="" />
+            <div class="avatar-plus"></div>
+          </div>
+          <div class="right-side-like" style="pointer-events: none">
+            <img src="img/icons/like.svg" alt="" />
+          </div>
+          <div class="right-side-comment" style="pointer-events: none">
+            <img src="img/icons/comment-icon-wiht-num.svg" alt="" />
+          </div>
+        </div>
+
+        <div id="message-container" class="message-container message-bigger">
+          BELLA69 WANTS TO EXCHANGE SAUCY PHOTOS WITH YOU. <br />
+          <br />
+          ALLOW?
+        </div>
+        <div id="options-container" class="options-container">
+          <div onclick="showNextBlock(3)" class="option-button" style="cursor: pointer">NO</div>
+          <div onclick="showNextBlock(3)" class="option-button" style="cursor: pointer">YES</div>
+        </div>
+        <div class="chat-box__label">@nicol_97</div>
+        <div
+          class="chat-box-footer track-click"
+          data-click-id="tik-tok-footer"
+          onclick="openlinks()">
+          <img src="img/icons/main.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/trends.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/new_post.svg" alt="icon" style="pointer-events: none" />
+
+          <img src="img/icons/inbox.svg" alt="icon" style="pointer-events: none" />
+
+          <img src="img/icons/profile.svg" alt="icon" style="pointer-events: none" />
+        </div>
+      </div>
+      <!-- ------------------ -->
+
+      <div class="chat-box chat-box3">
+        <div class="chat-box-header track-click" data-click-id="tik-tok-logo" onclick="openlinks()">
+          <img src="img/icons/logo.svg" alt="logo" style="pointer-events: none" />
+        </div>
+
+        <div
+          class="chat-box-right-side track-click"
+          data-click-id="tik-tok-right-side"
+          onclick="openlinks()">
+          <div class="avatar-wrap" style="pointer-events: none">
+            <img src="img/avatar.jpg" alt="" />
+            <div class="avatar-plus"></div>
+          </div>
+          <div class="right-side-like" style="pointer-events: none">
+            <img src="img/icons/like.svg" alt="" />
+          </div>
+          <div class="right-side-comment" style="pointer-events: none">
+            <img src="img/icons/comment-icon-wiht-num.svg" alt="" />
+          </div>
+        </div>
+        <div class="containers-wrapper">
+          <div class="numbers-container">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+          </div>
+          <div class="important-container">IMPORTANT</div>
+          <div class="question-container">
+            Before we can show you nude pics of horny women in your area that want to fuck right
+            now, we need to ask a few questions
+          </div>
+        </div>
+        <div id="options-container" class="options-container">
+          <div onclick="showNextBlock(4)" class="option-button" style="cursor: pointer">NO</div>
+          <div onclick="showNextBlock(4)" class="option-button" style="cursor: pointer">YES</div>
+        </div>
+        <div class="chat-box__label">@nicol_97</div>
+        <div
+          class="chat-box-footer track-click"
+          data-click-id="tik-tok-footer"
+          onclick="openlinks()">
+          <img src="img/icons/main.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/trends.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/new_post.svg" alt="icon" style="pointer-events: none" />
+          <img
+            class="inbox-footer-icon"
+            src="img/icons/inbox.svg"
+            alt="icon"
+            style="pointer-events: none" />
+          <img src="img/icons/profile.svg" alt="icon" style="pointer-events: none" />
+        </div>
+      </div>
+      <!-- ------------------ -->
+      <div class="chat-box chat-box4">
+        <div class="chat-box-header track-click" data-click-id="tik-tok-logo" onclick="openlinks()">
+          <img src="img/icons/logo.svg" alt="logo" style="pointer-events: none" />
+        </div>
+
+        <div
+          class="chat-box-right-side track-click"
+          data-click-id="tik-tok-right-side"
+          onclick="openlinks()">
+          <div class="avatar-wrap" style="pointer-events: none">
+            <img src="img/avatar.jpg" alt="" />
+            <div class="avatar-plus"></div>
+          </div>
+          <div class="right-side-like" style="pointer-events: none">
+            <img src="img/icons/like.svg" alt="" />
+          </div>
+          <div class="right-side-comment" style="pointer-events: none">
+            <img src="img/icons/comment-icon-wiht-num.svg" alt="" />
+          </div>
+        </div>
+        <div class="containers-wrapper">
+          <div class="numbers-container">
+            <span>1</span>
+            <span class="active">2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+          </div>
+          <div class="question-container">
+            The women on this site are horny cheating girlfriends and single teens looking for fun.
+            Do you agree to keep their secret?
+          </div>
+        </div>
+        <div id="options-container" class="options-container">
+          <div onclick="showNextBlock(5)" class="option-button" style="cursor: pointer">NO</div>
+          <div onclick="showNextBlock(5)" class="option-button" style="cursor: pointer">YES</div>
+        </div>
+        <div class="chat-box__label">@nicol_97</div>
+        <div class="chat-box-footer track-click" data-click-id="tik-tok-footer">
+          <img src="img/icons/main.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/trends.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/new_post.svg" alt="icon" style="pointer-events: none" />
+          <div class="inbox-footer-icon pwa-install-trigger">
+            <img src="img/icons/inbox.svg" alt="icon" style="pointer-events: none" />
+          </div>
+          <img src="img/icons/profile.svg" alt="icon" style="pointer-events: none" />
+          <div id="popup1-overlay" class="popup1-overlay hidden">
+            <div id="popup1-notification" class="popup1-notification">
+              <div class="popup1-content pwa-install-trigger">
+                <div class="popup1-content__left">
+                  <img src="./img/popup-content1__left.svg" alt="" />
+                </div>
+                <div class="popup1-content__right">
+                  <h3>BELLA69</h3>
+                  <p>“I feel like we’re getting closer… can I...</p>
+                </div>
+                <div class="popup1-content__label">now</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ------------------ -->
+      <div class="chat-box chat-box5">
+        <div class="chat-box-header track-click" data-click-id="tik-tok-logo" onclick="openlinks()">
+          <img src="img/icons/logo.svg" alt="logo" style="pointer-events: none" />
+        </div>
+
+        <div
+          class="chat-box-right-side track-click"
+          data-click-id="tik-tok-right-side"
+          onclick="openlinks()">
+          <div class="avatar-wrap" style="pointer-events: none">
+            <img src="img/avatar.jpg" alt="" />
+            <div class="avatar-plus"></div>
+          </div>
+          <div class="right-side-like" style="pointer-events: none">
+            <img src="img/icons/like.svg" alt="" />
+          </div>
+          <div class="right-side-comment" style="pointer-events: none">
+            <img src="img/icons/comment-icon-wiht-num.svg" alt="" />
+          </div>
+        </div>
+        <div class="containers-wrapper">
+          <div class="numbers-container">
+            <span>1</span>
+            <span>2</span>
+            <span class="active">3</span>
+            <span>4</span>
+            <span>5</span>
+          </div>
+          <div class="question-container">
+            The women on this site are not at all interested in a "relationship" and are only
+            looking to fuck. Are you OK with this request?
+          </div>
+        </div>
+        <div id="options-container" class="options-container">
+          <div onclick="showNextBlock(6)" class="option-button" style="cursor: pointer">NO</div>
+          <div onclick="showNextBlock(6)" class="option-button" style="cursor: pointer">YES</div>
+        </div>
+        <div class="chat-box__label">@nicol_97</div>
+        <div
+          class="chat-box-footer track-click"
+          data-click-id="tik-tok-footer"
+          onclick="openlinks()">
+          <img src="img/icons/main.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/trends.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/new_post.svg" alt="icon" style="pointer-events: none" />
+          <img
+            class="inbox-footer-icon"
+            src="img/icons/inbox.svg"
+            alt="icon"
+            style="pointer-events: none" />
+          <img src="img/icons/profile.svg" alt="icon" style="pointer-events: none" />
+        </div>
+      </div>
+      <!-- ------------------ -->
+      <div class="chat-box chat-box6">
+        <div class="chat-box-header track-click" data-click-id="tik-tok-logo" onclick="openlinks()">
+          <img src="img/icons/logo.svg" alt="logo" style="pointer-events: none" />
+        </div>
+
+        <div
+          class="chat-box-right-side track-click"
+          data-click-id="tik-tok-right-side"
+          onclick="openlinks()">
+          <div class="avatar-wrap" style="pointer-events: none">
+            <img src="img/avatar.jpg" alt="" />
+            <div class="avatar-plus"></div>
+          </div>
+          <div class="right-side-like" style="pointer-events: none">
+            <img src="img/icons/like.svg" alt="" />
+          </div>
+          <div class="right-side-comment" style="pointer-events: none">
+            <img src="img/icons/comment-icon-wiht-num.svg" alt="" />
+          </div>
+        </div>
+        <div class="containers-wrapper">
+          <div class="numbers-container">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span class="active">4</span>
+            <span>5</span>
+          </div>
+          <div class="question-container">
+            Do you agree to practice safe sex with the women you meed on this site?
+          </div>
+        </div>
+        <div id="options-container" class="options-container">
+          <div onclick="showNextBlock(7)" class="option-button" style="cursor: pointer">NO</div>
+          <div onclick="showNextBlock(7)" class="option-button" style="cursor: pointer">YES</div>
+        </div>
+        <div class="chat-box__label">@nicol_97</div>
+        <div
+          class="chat-box-footer track-click"
+          data-click-id="tik-tok-footer"
+          onclick="openlinks()">
+          <img src="img/icons/main.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/trends.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/new_post.svg" alt="icon" style="pointer-events: none" />
+          <img
+            class="inbox-footer-icon"
+            src="img/icons/inbox.svg"
+            alt="icon"
+            style="pointer-events: none" />
+          <img src="img/icons/profile.svg" alt="icon" style="pointer-events: none" />
+        </div>
+      </div>
+      <!-- ------------------ -->
+      <div class="chat-box chat-box7">
+        <div class="chat-box-header track-click" data-click-id="tik-tok-logo" onclick="openlinks()">
+          <img src="img/icons/logo.svg" alt="logo" style="pointer-events: none" />
+        </div>
+
+        <div
+          class="chat-box-right-side track-click"
+          data-click-id="tik-tok-right-side"
+          onclick="openlinks()">
+          <div class="avatar-wrap" style="pointer-events: none">
+            <img src="img/avatar.jpg" alt="" />
+            <div class="avatar-plus"></div>
+          </div>
+          <div class="right-side-like" style="pointer-events: none">
+            <img src="img/icons/like.svg" alt="" />
+          </div>
+          <div class="right-side-comment" style="pointer-events: none">
+            <img src="img/icons/comment-icon-wiht-num.svg" alt="" />
+          </div>
+        </div>
+        <div class="containers-wrapper">
+          <div class="numbers-container">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span class="active">5</span>
+          </div>
+          <div class="question-container">
+            Are you 24 years old or older? The women on this site are not interested in men younger
+            than due to rude and immature behavior in the past
+          </div>
+        </div>
+        <div id="options-container" class="options-container">
+          <div onclick="showNextBlock(8)" class="option-button" style="cursor: pointer">NO</div>
+          <div onclick="showNextBlock(8)" class="option-button" style="cursor: pointer">YES</div>
+        </div>
+        <div class="chat-box__label">@nicol_97</div>
+        <div
+          class="chat-box-footer track-click"
+          data-click-id="tik-tok-footer"
+          onclick="openlinks()">
+          <img src="img/icons/main.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/trends.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/new_post.svg" alt="icon" style="pointer-events: none" />
+          <img
+            class="inbox-footer-icon"
+            src="img/icons/inbox.svg"
+            alt="icon"
+            style="pointer-events: none" />
+          <img src="img/icons/profile.svg" alt="icon" style="pointer-events: none" />
+        </div>
+      </div>
+      <!-- ------------------ -->
+      <div class="chat-box chat-box8">
+        <div class="chat-box-header track-click" data-click-id="tik-tok-logo" onclick="openlinks()">
+          <img src="img/icons/logo.svg" alt="logo" style="pointer-events: none" />
+        </div>
+
+        <div
+          class="chat-box-right-side track-click"
+          data-click-id="tik-tok-right-side"
+          onclick="openlinks()">
+          <div class="avatar-wrap" style="pointer-events: none">
+            <img src="img/avatar.jpg" alt="" />
+            <div class="avatar-plus"></div>
+          </div>
+          <div class="right-side-like" style="pointer-events: none">
+            <img src="img/icons/like.svg" alt="" />
+          </div>
+          <div class="right-side-comment" style="pointer-events: none">
+            <img src="img/icons/comment-icon-wiht-num.svg" alt="" />
+          </div>
+        </div>
+        <div class="important-container">CONGRATULATIONS</div>
+        <div class="question-container">
+          You have qualified to enter our site. Please click Continue to complete the registrations
+          process
+        </div>
+        <div class="question-container">
+          VERY IMPORTANT! You must keep the identity of women you see on here a secret
+        </div>
+        <div id="options-container" class="options-container">
+          <button onclick="openlinks()" class="option-button" style="cursor: pointer">
+            Continue
+          </button>
+        </div>
+        <div class="chat-box__label">@nicol_97</div>
+        <div
+          class="chat-box-footer track-click"
+          data-click-id="tik-tok-footer"
+          onclick="openlinks()">
+          <img src="img/icons/main.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/trends.svg" alt="icon" style="pointer-events: none" />
+          <img src="img/icons/new_post.svg" alt="icon" style="pointer-events: none" />
+          <img
+            class="inbox-footer-icon"
+            src="img/icons/inbox.svg"
+            alt="icon"
+            style="pointer-events: none" />
+          <img src="img/icons/profile.svg" alt="icon" style="pointer-events: none" />
+        </div>
+      </div>
+
+      <div id="iosModal" class="pwa-modal" style="display: none">
+        <div class="pwa-modal__card">
+          <button id="iosClose" class="pwa-modal__close" aria-label="Close">✕</button>
+          <h3>Add to Home (iOS)</h3>
+          <p>Open the <b>Share</b> menu in Safari and tap <b>Add to Home Screen</b>.</p>
+        </div>
+      </div>
+
+      <!-- Fallback modal (when prompt is unavailable) -->
+      <div id="fallbackModal" class="pwa-modal" style="display: none">
+        <div class="pwa-modal__card">
+          <button id="fbClose" class="pwa-modal__close" aria-label="Close">✕</button>
+          <h3>Install App</h3>
+          <p>
+            Your browser does not support the system prompt. Try using the browser menu:
+            <b>Install App</b>/<b>Install</b>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        function isSamsungBrowser() {
+          var ua = navigator.userAgent.toLowerCase();
+          return ua.includes('samsung');
+        }
+
+        function isSamsungDevice() {
+          var ua = navigator.userAgent.toLowerCase();
+          return ua.includes('samsung') || ua.includes('sm-'); // sm- is commonly found in Samsung device UA strings
+        }
+
+        if (isSamsungBrowser()) {
+          document.body.classList.add('samsung-browser');
+        }
+
+        if (isSamsungDevice()) {
+          document.body.classList.add('samsung-device');
+        }
+
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+        if (viewportWidth <= 767) {
+          document.getElementById('chat-container').style.height = viewportHeight + 'px';
+          document.body.style.height = viewportHeight + 'px';
+        }
+      };
+    </script>
+
+    <script src="/config.js"></script>
+    <script type="text/javascript" src="adult_script.js"></script>
+    <script src="script.js"></script>
+
+    <script type="module">
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js');
+      }
+
+      import '/pwa-install.js';
+    </script>
+  </body>
+</html>
